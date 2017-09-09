@@ -99,7 +99,6 @@ function getInTouch (state, prev, send) {
       ${border('salmon')}
       <article class="flex-ns justify-between mw8">
         ${formDescription()}
-        ${form(state, prev, send)}
       </article>
     </section>
   `
@@ -139,43 +138,14 @@ function formDescription () {
   var partner = fs.readFileSync(path.join(__dirname, '/assets/partner.txt'), 'utf8')
 
   return html`
-    <div class="tl pa0-ns pb4 lh-copy w-50-ns">
+    <div class="tl pa0-ns pb4 lh-copy w-100-ns">
       <h2 class="ttu fw7 white"> we can help </h2>
+      <p class="f3 fw7 white">${partner}</p>
+      ${href('pa3 w-100 white ttu bg-salmon b--transparent br2', 'https://community.civicdr.org', 'enter')}
       <p class="f3 fw7 white">${organizations}</p>
-      <p class="f3 white">${partner}</p>
-      <div>
-        ${href('salmon', 'https://www.accessnow.org/help/', 'Access Now Digital Security Helpline')}
-      </div>
-      <div>
-        ${href('salmon', 'https://securitywithoutborders.org/', 'Security Without Borders')}
-      </div>
+      <p class="ttu white">To contact CiviCDR please email ${href('salmon', 'mailto:community@civicdr.org', ' community (at) civicdr (dot) org')}</p>
     </article>
   `
-}
-
-function form (state, prev, send) {
-  return html`
-    <form class="w-50-ns" onsubmit=${email}>
-      ${input({ type: 'text', name: 'organisation', placeholder: 'Your organisation name*' })}
-      ${input({ type: 'text', name: 'issue', placeholder: 'Briefly describe your problem*' })}
-      <div class="bg-white pa3 w-100 mb3">
-        <p class="dark-gray">Does the person dealing with the incident speak English?*</p>
-        <input id="yes" value="yes" name="english" type="radio">
-        <label for="yes" class="pr4">YES</label>
-        <input id="no" value="no" name="english" type="radio">
-        <label for="no">NO</label>
-      </div>
-      ${input({ type: 'email', name: 'email', placeholder: 'Contact email address*' })}
-      <div>
-        <input type="submit" class="pt3 pb3 w-100 white ttu bg-salmon b--transparent br2" value="submit">
-      </div>
-    </form>
-  `
-
-  function email (e) {
-    e.preventDefault()
-    send('email:getFormData', e.target)
-  }
 }
 
 function border (colour) {
