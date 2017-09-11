@@ -23,3 +23,5 @@ changes.
 6. Once the PR is rebased and merged, you can deploy back from the `master`
 branch with `npm run publish`. This command will compile, copy over the assets
 to `dist/` and push over to `gh-pages` so you don't have to.
+7. If you only need to create the distribution files, you can run `npm run build`.
+This command will create the distribution files in `dist/` directory.
