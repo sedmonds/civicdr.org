@@ -143,7 +143,7 @@ function formDescription () {
       <p class="f3 fw7 white">${partner}</p>
       ${href('pa3 w-100 white ttu bg-salmon b--transparent br2', 'https://community.civicdr.org', 'enter')}
       <p class="f3 fw7 white">${organizations}</p>
-      <p class="ttu white">To contact CiviCDR please email ${href('salmon', 'mailto:community@civicdr.org', ' community (at) civicdr (dot) org')}</p>
+      <p class="ttu white">To contact CiviCDR please email ${href('salmon', 'mailto:team@civicdr.org', ' team (at) civicdr (dot) org')}</p>
     </article>
   `
 }
