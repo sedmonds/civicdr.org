@@ -53,29 +53,26 @@ function mainView (state, prev, send) {
       ${intro()}
       ${about()}
       ${getInTouch(state, prev, send)}
-      ${origins()}
       ${footer()}
     </body>
   `
 }
 
 function intro () {
-  var text = fs.readFileSync(path.join(__dirname, '/assets/intro.txt'), 'utf8')
-
   return html`
     <section class="pl5 pr5 pb5 pt2 bg-salmon" id="intro">
       <div class="fr">
         ${href('white', '#contact', 'contact')}
       </div>
       ${border('white')}
-      <article class="f-5-ns f2 tl mw8 lh-title white">${text}</article>
+    <article class="f-5-ns f2 tl mw8 lh-title white">
+    CiviCDR is now Center for Digital Resilience. <br/>Go <a href="https://digiresilience.org/">here</a> to learn more.
+    </article>
     </section>
   `
 }
 
 function about () {
-  var about = fs.readFileSync(path.join(__dirname, '/assets/about.txt'), 'utf8')
-  var aboutEmergency = fs.readFileSync(path.join(__dirname, '/assets/about-emergency.txt'), 'utf8')
   var logo = fs.readFileSync(path.join(__dirname, '/assets/civicdr-logo.svg'), 'utf8')
 
   return html`
@@ -85,9 +82,9 @@ function about () {
       </div>
       ${border('salmon')}
       <article class="tl mw8 lh-copy">
-        <h2 class="ttu fw7"> what we do </h2>
-        <p class="f3">${about}</p>
-        <p class="f3">${aboutEmergency}</p>
+        <p class="f3">
+          Please note the new URL for our platform: <a href="https://ir.digiresilience.org">https://ir.digiresilience.org</a>.
+        </p>
       </article>
     </section>
   `
@@ -141,9 +138,9 @@ function formDescription () {
     <div class="tl pa0-ns pb4 lh-copy w-100-ns">
       <h2 class="ttu fw7 white"> we can help </h2>
       <p class="f3 fw7 white">${partner}</p>
-      ${href('pa3 w-100 white ttu bg-salmon b--transparent br2', 'https://community.civicdr.org', 'enter')}
+      ${href('pa3 w-100 white ttu bg-salmon b--transparent br2', 'https://ir.digiresilience.org/', 'enter')}
       <p class="f3 fw7 white">${organizations}</p>
-      <p class="ttu white">To contact CiviCDR please email ${href('salmon', 'mailto:team@civicdr.org', ' team (at) civicdr (dot) org')}</p>
+      <p class="ttu white">To contact Center for Digital Resilience please email ${href('salmon', 'mailto:info@digiresilience.org', ' info (at) digiresilience (dot) org')}</p>
     </article>
   `
 }

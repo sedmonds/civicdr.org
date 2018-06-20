@@ -7,15 +7,15 @@ body {
 }
 
 .logo-salmon {
-	fill: #D85B58;
+  fill: #D85B58;
 }
 
 .logo-salmon .st0 {
-	stroke: #D85B58;
+  stroke: #D85B58;
 }
 
 .logo-dark .st0 {
-	stroke: #000000;
+  stroke: #000000;
 }
 
 .bg-salmon {
@@ -31,3 +31,6 @@ body {
 :-ms-input-placeholder { /* IE 10+ */
   color: #333;
 }
+ a {
+   color: #222;
+ }
